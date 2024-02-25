@@ -1,0 +1,33 @@
+{
+ "python.formatting.blackArgs": ["--diff", "--quiet", "--fast"],
+ "python.formatting.provider": "black",
+ "python.formatting.blackPath": "/usr/bin/black",
+ "coc.preferences.formatOnType": true,
+ "python.sortImports.path": "usr/bin/isort",
+ "python.linting.enable": true,
+ "coc.preferences.formatOnSaveFiletypes": ["*"],
+ "diagnostic-languageserver.formatFiletypes": {
+  "python": ["black", "isort"]
+ },
+ "diagnostic-languageserver.formatters": {
+  "black": {
+   "command": "black",
+   "args": ["-q", "-"]
+  },
+  "isort": {
+   "command": "isort",
+   "args": ["-q", "-"]
+  }
+ },
+ "diagnostic.refhreshOnInsertMode": true,
+ "eslint.packageManager": "yarn",
+ "eslint.nodePath": ".yarn/sdks",
+ "eslint.autoFixOnSave": true,
+ "workspace.workspaceFolderCheckCwd": false,
+ "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+ "javascript.formatting.provider": "prettier",
+ "typescriptreact.formatting.provider": "prettier",
+ "javascriptreact.formatting.provider": "prettier",
+ "typescript.formatting.provider": "prettier",
+ "prettier.tabWidth": 1
+}
