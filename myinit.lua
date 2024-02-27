@@ -104,3 +104,6 @@ require('gitsigns').setup {
 		enable = false
 	},
 }
+
+require('feline').setup()
+

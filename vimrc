@@ -31,6 +31,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'xiyaowong/transparent.nvim'
+Plug 'feline-nvim/feline.nvim'
 call plug#end()
 
 " Autoformat
