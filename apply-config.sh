@@ -2,18 +2,22 @@
 
 # This script is used to apply the neovim configuration of the repo to your machine
 
-add_color=False
-restore_backup=False
+add_color=false
+restore_backup=false
+import_config=false
 
 arg=1
 while [ $arg -le $# ]; do
     increm=1
     case ${!arg} in
 	    "-c") 
-		add_color=True
+		add_color=true
 		;;
 	"-r")
-		restore_backup=True
+		restore_backup=true
+		;;
+		"-i")
+		import_config=true
 		;;
 		*) echo "Invalid argument: ${!arg}"
 		;;
@@ -22,7 +26,7 @@ while [ $arg -le $# ]; do
     ((arg+=$increm))
 done
 
-if [ restore_backup ]; then
+if [ $restore_backup = true ]; then
     if [ -f ~/.config/nvim/init.vim.bak ]; then
 	cp ~/.config/nvim/init.vim.bak ~/.config/nvim/init.vim
     fi
@@ -39,8 +43,32 @@ if [ restore_backup ]; then
 	cp ~/.vimrc.bak ~/.vimrc
     fi
 
-    if [ -f ~/.config/nvim/colorconfig.vim.bak ] && [ add_color ]; then
+    if [ -f ~/.config/nvim/colorconfig.vim.bak ] && [ add_color = true]; then
 	cp ~/.config/nvim/colorconfig.vim.bak ~/.config/nvim/colorconfig.vim
+    fi
+    exit 0
+fi
+
+
+if [ $import_config = true ]; then
+	if [ -f ~/.config/nvim/init.vim ]; then
+	cp ~/.config/nvim/init.vim ./init.vim
+    fi
+
+    if [ -f ~/.config/nvim/coc-settings.json ]; then
+	cp ~/.config/nvim/coc-settings.json ./coc-settings.json
+    fi
+
+    if [ -f ~/.config/nvim/myinit.lua ]; then
+	cp ~/.config/nvim/myinit.lua ./myinit.lua
+    fi
+
+    if [ -f ~/.vimrc ]; then
+	cp ~/.vimrc ./vimrc
+    fi
+
+    if [ -f ~/.config/nvim/colorconfig.vim ] && [ add_color = true ]; then
+	cp ~/.config/nvim/colorconfig.vim ./colorconfig.vim
     fi
     exit 0
 fi
@@ -63,7 +91,7 @@ if [ -f ~/.vimrc.back ]; then
     rm ~/.vimrc.back
 fi
 
-if [ -f ~/.config/nvim/colorconfig.vim.back ] && [ add_color ]; then
+if [ -f ~/.config/nvim/colorconfig.vim.back ] && [ add_color = true]; then
     rm ~/.config/nvim/colorconfig.vim.back
 fi
 
@@ -85,7 +113,7 @@ if [ -f ~/.vimrc ]; then
     cp ~/.vimrc ~/.vimrc.bak
 fi
 
-if [ -f ~/.config/nvim/colorconfig.vim ] && [ add_color ]; then
+if [ -f ~/.config/nvim/colorconfig.vim ] && [ add_color= true ]; then
     cp ~/.config/nvim/colorconfig.vim ~/.config/nvim/colorconfig.vim.bak
 fi
 
@@ -96,6 +124,6 @@ cp coc-settings.json ~/.config/nvim/coc-settings.json
 cp myinit.lua ~/.config/nvim/myinit.lua
 cp vimrc ~/.vimrc
 
-if [ add_color ]; then
+if [ add_color = true ]; then
     cp colorconfig.vim ~/.config/nvim/colorconfig.vim
 fi
