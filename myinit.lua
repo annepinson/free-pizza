@@ -37,29 +37,24 @@ local builtin = require('telescope.builtin')
 
 vim.keymap.set({'n', 'i', 'v'}, '<C-f>', builtin.find_files, {})
 vim.keymap.set({'n', 'i', 'v'}, '<C-g>', builtin.live_grep, {})
-vim.keymap.set({'n', 'i', 'v'}, '<C-s>t', builtin.git_status, {})
-vim.keymap.set({'n', 'i', 'v'}, '<C-s>h', builtin.git_stash, {})
-
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>', builtin.git_status, {})
+vim.keymap.set({'n', 'i', 'v'}, '<C-h>', builtin.git_stash, {})
+vim.keymap.set({'n', 'i', 'v'}, '<C-b>', builtin.buffers, {})
+vim.keymap.set({'n', 'i', 'v'}, '<C-l>', builtin.git_commits, {})
+vim.keymap.set({'n', 'i', 'v'}, '<C-w>', builtin.grep_string, {})
 
 local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 vim.keymap.set("v", "<C-g>", live_grep_args_shortcuts.grep_visual_selection)
 
+local actions = require "telescope.actions"
 
 require("telescope").setup {
   pickers = {
     find_files = {
-    hidden = true
-    }
-      --mappings = {
-        --i = {
-          --["<CR>"] = function(prompt_bufnr)
-            ---...
-          --end,
-       -- },
-     -- },
+    hidden = true,
     },
   }
-
+}
 
 require('gitsigns').setup {
 	signs = {

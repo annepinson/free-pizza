@@ -100,6 +100,7 @@ augroup commenting_blocks_of_code
 	autocmd FileType c,cpp,java,javascript,typescript,typescriptreact,javascriptreact let b:comment_leader = '//'
 	autocmd FileType sh,ruby,python   let b:comment_leader = '#'
 	autocmd FileType vim              let b:comment_leader = '"'
+	autocmd FileType lua let b:comment_leader = '--'
 augroup END
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
@@ -134,7 +135,7 @@ nmap <silent> dn <Plug>(coc-diagnostic-next)
 " Replace pick by wanted command in git rebase -i
 nmap <silent> ed :<C-B>silent <C-E>s/pick/edit/<CR>:nohlsearch<CR><Down>
 nmap <silent> sq :<C-B>silent <C-E>s/pick/squash/<CR>:nohlsearch<CR><Down>
-nmap <silent> de :<C-B>silent <C-E>s/pick/delete/<CR>:nohlsearch<CR><Down>
+nmap <silent> dr :<C-B>silent <C-E>s/pick/drop/<CR>:nohlsearch<CR><Down>
 nmap <silent> re :<C-B>silent <C-E>s/pick/reword/<CR>:nohlsearch<CR><Down>
 
 " Allow to search and replace a word easily
