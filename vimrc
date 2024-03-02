@@ -152,3 +152,13 @@ nnoremap fc :nohlsearch<CR>
 
 " To be able to select a word in normal mode
 nnoremap aw vaw
+
+nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> gt :call CocAction('jumpDefinition', 'tabe')<CR>
+
+"Allow to rename a variable in all files
+vmap <F9> "zy:CocSearch <C-r>z<CR>
+nmap <F9> "zyiw:CocSearch <C-r>z<CR>
+lnoremap <F9> "zyiw:CocSearch <C-r>z<CR>
+

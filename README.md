@@ -84,3 +84,13 @@ In normal mode
 `<C-h>` to open the git_stash picker
 `<C-l>` to open the git_commmits picker
 `<C-b>` to open the buffers picker
+
+## Go to definition
+`gs` on a variable open an horizontal split with the variable definition
+`gd`on a variable open a vertical split with the variable definition
+`gt` on a variable open a new tab with the variable definition
+
+## Replace in all files
+`<F9>` open a new buffer with all places the variable is used, in order to replace it everywhere
+
+
