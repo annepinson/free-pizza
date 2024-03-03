@@ -86,11 +86,15 @@ In normal mode
 `<C-b>` to open the buffers picker
 
 ## Go to definition
-`gs` on a variable open an horizontal split with the variable definition
-`gd`on a variable open a vertical split with the variable definition
-`gt` on a variable open a new tab with the variable definition
+
+- `gs` on a variable open an horizontal split with the variable definition
+
+- `gd`on a variable open a vertical split with the variable definition
+
+- `gt` on a variable open a new tab with the variable definition
+
+- `gr` on a variable declaration to see all its references through the workspace
 
 ## Replace in all files
+
 `<F9>` open a new buffer with all places the variable is used, in order to replace it everywhere
-
-

@@ -64,6 +64,9 @@ set nowritebackup
 " delays and poor user experience
 set updatetime=300
 
+" Vertical splits send the new tab to the right
+set splitright 
+
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved
 set signcolumn=no
@@ -156,6 +159,7 @@ nnoremap aw vaw
 nmap <silent> gs :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gt :call CocAction('jumpDefinition', 'tabe')<CR>
+nmap <silent> gr <Plug>(coc-references)
 
 "Allow to rename a variable in all files
 vmap <F9> "zy:CocSearch <C-r>z<CR>
