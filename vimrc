@@ -162,3 +162,9 @@ vmap <F9> "zy:CocSearch <C-r>z<CR>
 nmap <F9> "zyiw:CocSearch <C-r>z<CR>
 lnoremap <F9> "zyiw:CocSearch <C-r>z<CR>
 
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
