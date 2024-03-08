@@ -113,7 +113,7 @@ if [ -f ~/.vimrc ]; then
     cp ~/.vimrc ~/.vimrc.bak
 fi
 
-if [ -f ~/.config/nvim/colorconfig.vim ] && [ add_color= true ]; then
+if [ -f ~/.config/nvim/colorconfig.vim ] && [ add_color = true ]; then
     cp ~/.config/nvim/colorconfig.vim ~/.config/nvim/colorconfig.vim.bak
 fi
 
